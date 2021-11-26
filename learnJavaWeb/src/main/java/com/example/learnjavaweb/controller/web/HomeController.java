@@ -19,6 +19,9 @@ public class HomeController extends HttpServlet {
     @Inject
     private ICategoryService categoryService;
 
+    @Inject
+    private INewsService newsService;
+
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("categoris", categoryService.findAll());
         RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
