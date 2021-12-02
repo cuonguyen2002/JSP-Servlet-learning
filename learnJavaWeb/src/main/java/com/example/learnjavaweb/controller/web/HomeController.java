@@ -1,8 +1,6 @@
 package com.example.learnjavaweb.controller.web;
 
-import com.example.learnjavaweb.model.UserModel;
 import com.example.learnjavaweb.service.ICategoryService;
-import com.example.learnjavaweb.service.INewsService;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -18,9 +16,6 @@ public class HomeController extends HttpServlet {
 
     @Inject
     private ICategoryService categoryService;
-
-    @Inject
-    private INewsService newsService;
 
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("categoris", categoryService.findAll());
